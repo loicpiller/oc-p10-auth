@@ -1,0 +1,41 @@
+{% extends 'base_auth.html.twig' %}
+
+{% block title %}Inscription – TaskLinker{% endblock %}
+
+{% block auth_title %}S'inscrire{% endblock %}
+
+{% block body %}
+    {{ form_start(registrationForm, {'attr': {'class': 'auth-form'}}) }}
+        <div class="auth-field">
+            {{ form_label(registrationForm.nom) }}
+            {{ form_widget(registrationForm.nom) }}
+            {{ form_errors(registrationForm.nom) }}
+        </div>
+        <div class="auth-field">
+            {{ form_label(registrationForm.prenom) }}
+            {{ form_widget(registrationForm.prenom) }}
+            {{ form_errors(registrationForm.prenom) }}
+        </div>
+        <div class="auth-field">
+            {{ form_label(registrationForm.email) }}
+            {{ form_widget(registrationForm.email) }}
+            {{ form_errors(registrationForm.email) }}
+        </div>
+        <div class="auth-field">
+            {{ form_label(registrationForm.plainPassword.first) }}
+            {{ form_widget(registrationForm.plainPassword.first) }}
+            {{ form_errors(registrationForm.plainPassword.first) }}
+        </div>
+        <div class="auth-field">
+            {{ form_label(registrationForm.plainPassword.second, 'Confirmation mot de passe') }}
+            {{ form_widget(registrationForm.plainPassword.second) }}
+            {{ form_errors(registrationForm.plainPassword.second) }}
+        </div>
+
+        <button type="submit" class="auth-submit">Continuer</button>
+    {{ form_end(registrationForm) }}
+
+    <p class="auth-switch">
+        <a href="{{ path('app_login') }}">Vous avez déjà un compte ?</a>
+    </p>
+{% endblock %}
