@@ -23,7 +23,7 @@ class ProjetController extends AbstractController
 
     }
 
-    #[Route('/', name: 'app_projets')]
+    #[Route('/projets', name: 'app_projets')]
     public function projets(): Response
     {
         $projets = $this->projetRepository->findBy([

@@ -1,0 +1,21 @@
+{% extends 'base_auth.html.twig' %}
+
+{% block title %}Bienvenue – TaskLinker{% endblock %}
+
+{% block card_class %}dispatch-card{% endblock %}
+
+{% block auth_title %}Bienvenue sur TaskLinker{% endblock %}
+
+{% block body %}
+    <p class="dispatch-subtitle">Commencez dès maintenant - gratuitement</p>
+
+    <div class="dispatch-actions">
+        <p class="auth-switch">Vous avez déjà un compte ?</p>
+
+        <a href="{{ path('app_login') }}" class="auth-submit">Se connecter</a>
+
+        <div class="dispatch-separator"><span>ou</span></div>
+
+        <a href="{{ path('app_register') }}" class="auth-submit dispatch-btn-register">S'inscrire</a>
+    </div>
+{% endblock %}

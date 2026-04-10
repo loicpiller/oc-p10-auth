@@ -11,10 +11,10 @@
     </head>
     <body>
         <div id="auth-page">
-            <a href="{{ path('app_login') }}" id="auth-logo">
+            <a href="{{ path('app_dispatch') }}" id="auth-logo">
                 <img src="{{ asset('img/logo.png') }}" alt="Logo TaskLinker" />
             </a>
-            <div id="auth-card">
+            <div id="auth-card" class="{% block card_class %}{% endblock %}">
                 <h1>{% block auth_title %}{% endblock %}</h1>
                 {% block body %}{% endblock %}
             </div>
